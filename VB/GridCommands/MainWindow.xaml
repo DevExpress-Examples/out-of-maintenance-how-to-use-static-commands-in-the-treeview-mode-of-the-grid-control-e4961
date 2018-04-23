@@ -1,0 +1,48 @@
+﻿<Window x:Class="DxTreeViewTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:DxTreeViewTest="clr-namespace:DxTreeViewTest"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"     
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+
+        <dxg:GridControl AutoGenerateColumns="AddNew" Name="grid">
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn FieldName="Value"/>
+                <dxg:GridColumn FieldName="IsProcessed" AllowEditing="False">
+                    <dxg:GridColumn.DisplayTemplate>
+                        <ControlTemplate>
+                            <dxe:CheckEdit Name="PART_CheckEdit" IsChecked="{Binding Path=EditValue, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </ControlTemplate>
+                    </dxg:GridColumn.DisplayTemplate>
+                </dxg:GridColumn>
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>				
+                <dxg:TreeListView Name="treeListView">
+                        <dxg:TreeListView.RowCellMenuCustomizations>                        
+                            <dxb:BarButtonItem Name="toggleNode" Content="Collapse/Expand Selected Node"
+                                               Command="{Binding Path=(dxg:GridPopupMenu.GridMenuInfo).View.Commands.ChangeNodeExpanded,RelativeSource={RelativeSource Self}}"                                           
+                                               CommandParameter="{Binding Row.RowHandle.Value}"/>                  
+                        </dxg:TreeListView.RowCellMenuCustomizations>                    
+                        <dxg:TreeListView.Nodes>
+                            <dxg:TreeListNode>
+                                <dxg:TreeListNode.Content>
+                                    <DxTreeViewTest:Item Value="2" IsProcessed="False"/>
+                                </dxg:TreeListNode.Content>
+                                <dxg:TreeListNode.Nodes>
+                                    <dxg:TreeListNode>
+                                        <dxg:TreeListNode.Content>
+                                            <DxTreeViewTest:Item  Value="20" IsProcessed="True"/>
+                                        </dxg:TreeListNode.Content>
+                                    </dxg:TreeListNode>
+                                </dxg:TreeListNode.Nodes>
+                            </dxg:TreeListNode>
+                        </dxg:TreeListView.Nodes>
+                </dxg:TreeListView>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>    
+</Window>
