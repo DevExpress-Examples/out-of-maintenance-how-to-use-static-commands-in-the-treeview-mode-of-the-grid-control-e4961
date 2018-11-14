@@ -41,6 +41,7 @@
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2" />
     <Reference Include="DevExpress.Mvvm.v18.2" />
+    <Reference Include="DevExpress.Printing.v18.2.Core"/>
     <Reference Include="DevExpress.Xpf.Core.v18.2" />
     <Reference Include="DevExpress.Xpf.Printing.v18.2" />
     <Reference Include="DevExpress.Xpf.Grid.v18.2" />
