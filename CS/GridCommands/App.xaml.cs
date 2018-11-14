@@ -16,7 +16,7 @@ namespace DxTreeViewTest
 		protected override void OnStartup(StartupEventArgs e)
 		{
 			base.OnStartup(e);
-			ThemeManager.ApplicationThemeName = "Office2007Blue";
+            ApplicationThemeHelper.ApplicationThemeName = "Office2007Blue";
 
 		}
 	}
