@@ -13,11 +13,9 @@
             <dxg:GridControl.Columns>
                 <dxg:GridColumn FieldName="Value"/>
                 <dxg:GridColumn FieldName="IsProcessed" AllowEditing="False">
-                    <dxg:GridColumn.DisplayTemplate>
-                        <ControlTemplate>
-                            <dxe:CheckEdit Name="PART_CheckEdit" IsChecked="{Binding Path=EditValue, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
-                        </ControlTemplate>
-                    </dxg:GridColumn.DisplayTemplate>
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:CheckEditSettings/>
+                    </dxg:GridColumn.EditSettings>
                 </dxg:GridColumn>
             </dxg:GridControl.Columns>
             <dxg:GridControl.View>				
