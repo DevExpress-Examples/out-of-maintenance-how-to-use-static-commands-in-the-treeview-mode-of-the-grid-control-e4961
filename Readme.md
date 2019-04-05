@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * **[MainWindow.xaml](./CS/GridCommands/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/GridCommands/MainWindow.xaml))**
-* [MainWindow.xaml.cs](./CS/GridCommands/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/GridCommands/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/GridCommands/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/GridCommands/MainWindow.xaml.vb))
 <!-- default file list end -->
 # How to use static commands in the TreeView mode of the Grid control
 
